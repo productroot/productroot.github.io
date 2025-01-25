@@ -30,16 +30,17 @@ export function ContactForm() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/xgvovbob', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          to: 'patryk@productroot.io',
-          subject: `New contact form submission from ${formData.firstName} ${formData.lastName}`,
-          ...formData
-        }),
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message
+        })
       })
 
       if (response.ok) {
@@ -53,14 +54,14 @@ export function ContactForm() {
         })
       }
     } catch (error) {
-      console.error('Error sending email:', error)
+      console.error('Error sending form:', error)
     } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
-    <div className="bg-[#0B1120] text-white py-24 relative">
+    <div id="contact" className="bg-[#0B1120] text-white py-24 relative">
       {showBanner && (
         <Banner
           message="Thank you for your message. We'll get back to you soon!"
