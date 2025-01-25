@@ -60,7 +60,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-[#0B1120] text-white py-24 relative">
+    <div id="contact" className="bg-[#0B1120] text-white py-24 relative">
       {showBanner && (
         <Banner
           message="Thank you for your message. We'll get back to you soon!"

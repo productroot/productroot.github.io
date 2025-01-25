@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
@@ -38,7 +40,14 @@ export function Hero() {
             Strategic AI consulting and implementation services<br />
             for Management Systems
           </p>
-          <Button className="bg-blue-600 hover:bg-blue-700">Get Started</Button>
+          <Button 
+            className="bg-blue-600 hover:bg-blue-700"
+            onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Get Started
+          </Button>
         </div>
       </div>
     </div>

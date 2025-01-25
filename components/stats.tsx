@@ -13,11 +13,11 @@ export function Stats() {
           </div>
           <div className="flex items-center justify-center">
             <img
-              src="/placeholder.svg?height=300&width=300"
+              src="/woman-and-robot.jpg"
               alt="AI Consulting Analytics Dashboard"
               className="rounded-lg shadow-lg"
-              width={300}
-              height={300}
+              width={500}
+              height={500}
             />
           </div>
         </div>
