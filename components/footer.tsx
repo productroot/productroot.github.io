@@ -1,76 +1,142 @@
+"use client"
+
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Facebook, Twitter, Instagram, Linkedin, Github, Send } from "lucide-react"
+
 export function Footer() {
+  const currentYear = new Date().getFullYear()
+  
   return (
-    <footer className="bg-[#0B1120] text-white py-12 border-t border-gray-800">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer className="bg-muted/50 pt-16 pb-8 border-t">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="font-bold mb-4">ProductRoot.io</h3>
+            <Link href="/" className="inline-block mb-4">
+              <span className="font-bold text-2xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                ProductRoot
+              </span>
+            </Link>
+            <p className="text-muted-foreground mb-4">
+              Specjalizujemy się w zarządzaniu produktem w obszarach oprogramowania i sztucznej inteligencji.
+            </p>
             <div className="flex space-x-4">
-              <a href="https://x.com/SkylineTraderIO" className="text-gray-400 hover:text-white">
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Facebook className="h-5 w-5" />
+                <span className="sr-only">Facebook</span>
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-              </a>
-              <a href="https://www.linkedin.com/in/patrykwodniak/" className="text-gray-400 hover:text-white">
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </a>
+              </Link>
             </div>
           </div>
+          
           <div>
-            <h4 className="font-bold mb-4">Solutions</h4>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-lg mb-4">Nawigacja</h3>
+            <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  AI Consulting
-                </a>
+                <Link href="#home" className="text-muted-foreground hover:text-primary transition-colors">
+                  Strona główna
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Machine Learning
-                </a>
+                <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+                  O nas
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Data Analytics
-                </a>
+                <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Usługi
+                </Link>
+              </li>
+              <li>
+                <Link href="#experience" className="text-muted-foreground hover:text-primary transition-colors">
+                  Doświadczenie
+                </Link>
+              </li>
+              <li>
+                <Link href="#technologies" className="text-muted-foreground hover:text-primary transition-colors">
+                  Technologie
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  Kontakt
+                </Link>
               </li>
             </ul>
           </div>
+          
           <div>
-            <h4 className="font-bold mb-4">Company</h4>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-lg mb-4">Usługi</h3>
+            <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  About Us
-                </a>
+                <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Strategia AI
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Careers
-                </a>
+                <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Zarządzanie produktem
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Contact
-                </a>
+                <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Leadership produktowy
+                </Link>
+              </li>
+              <li>
+                <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Innowacje produktowe
+                </Link>
+              </li>
+              <li>
+                <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Optymalizacja produktu
+                </Link>
               </li>
             </ul>
           </div>
+          
           <div>
-            <h4 className="font-bold mb-4">Company Details</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>ProductRoot</li>
-              <li>VAT ID: PL6941663049</li>
-              <li>
-                <a href="tel:+48888316747" className="hover:text-white">
-                  Mobile: +48 888 316 747
-                </a>
-              </li>
-            </ul>
+            <h3 className="font-bold text-lg mb-4">Newsletter</h3>
+            <p className="text-muted-foreground mb-4">
+              Zapisz się, aby otrzymywać najnowsze informacje i aktualizacje.
+            </p>
+            <div className="flex space-x-2">
+              <Input placeholder="Twój email" className="flex-1" />
+              <Button size="icon">
+                <Send className="h-4 w-4" />
+                <span className="sr-only">Subskrybuj</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+        
+        <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-muted-foreground text-sm">
+            &copy; {currentYear} ProductRoot. Wszelkie prawa zastrzeżone.
+          </div>
+          <div className="flex space-x-6 text-sm">
+            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              Polityka prywatności
+            </Link>
+            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              Warunki korzystania
+            </Link>
+            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              Cookies
+            </Link>
           </div>
         </div>
       </div>
