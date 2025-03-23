@@ -1,8 +1,20 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import * as React from "react"
 
 export function Hero() {
+  const taglines: string[] = ["Innovation in motion", "Driving your Product forward", "Where ideas take fly"]
+  const [currentTaglineIndex, setCurrentTaglineIndex] = React.useState<number>(0)
+  
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTaglineIndex((prevIndex: number) => (prevIndex + 1) % taglines.length)
+    }, 3000)
+    
+    return () => clearInterval(interval)
+  }, [])
+  
   return (
     <div className="relative min-h-[600px] flex items-center">
       <div
@@ -34,14 +46,15 @@ export function Hero() {
         </span>
       </div>
       <div className="container mx-auto px-4 z-10">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">We Deliver Tailored AI Solutions</h1>
-          <p className="text-lg text-gray-700 mb-8">
-            Strategic AI consulting and implementation services<br />
-            for Management Systems
-          </p>
+        <div className="max-w-2xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">We Deliver Tailored AI Solutions</h1>
+          <div className="mb-10 overflow-hidden">
+            <p className="text-3xl md:text-5xl font-medium text-blue-600 min-h-[60px] transform transition-all duration-700 ease-in-out" style={{ opacity: 1 }}>
+              {taglines[currentTaglineIndex]}
+            </p>
+          </div>
           <Button 
-            className="bg-blue-600 hover:bg-blue-700"
+            className="bg-blue-600 hover:bg-blue-700 text-lg py-2 px-6"
             onClick={() => {
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
             }}
