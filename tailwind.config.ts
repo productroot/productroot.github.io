@@ -22,8 +22,8 @@ const config: Config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				DEFAULT: '#DEDBC8',
+  				foreground: '#050505'
   			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
@@ -61,6 +61,9 @@ const config: Config = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			}
+  		},
+  		fontFamily: {
+  			serif: ['"Instrument Serif"', 'serif']
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
